@@ -4,42 +4,6 @@
 ## Loading and preprocessing the data
 
 
-```r
-# Install required libraries first
-library(ggplot2)
-library(dplyr)
-```
-
-```
-## 
-## Attaching package: 'dplyr'
-## 
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-## 
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
-
-```r
-# Unpack the data
-unzip(zipfile="activity.zip")
-data <- read.csv("activity.csv")
-
-# Show first 5 records
-head(data, 5)
-```
-
-```
-##   steps       date interval
-## 1    NA 2012-10-01        0
-## 2    NA 2012-10-01        5
-## 3    NA 2012-10-01       10
-## 4    NA 2012-10-01       15
-## 5    NA 2012-10-01       20
-```
 
 ## What is mean total number of steps taken per day?
 
