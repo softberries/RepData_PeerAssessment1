@@ -5,6 +5,24 @@
 
 
 
+```r
+# Unpack the data
+unzip(zipfile="activity.zip")
+data <- read.csv("activity.csv")
+
+# Show first 5 records
+head(data, 5)
+```
+
+```
+##   steps       date interval
+## 1    NA 2012-10-01        0
+## 2    NA 2012-10-01        5
+## 3    NA 2012-10-01       10
+## 4    NA 2012-10-01       15
+## 5    NA 2012-10-01       20
+```
+
 ## What is mean total number of steps taken per day?
 
  1. Calculate the total number of steps taken per day
@@ -38,7 +56,7 @@ head(steps.df, 10)
 hist(stepsPerDay, breaks=11, xlab="Steps per day", main="Total steps per day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
 
  3. Calculate and report the mean and median of the total number of steps taken per day
  
@@ -75,7 +93,7 @@ ggplot(data = as.data.frame(avgsInterval), mapping = aes(x = interval, y = meanS
     ggtitle("Avg Number of Steps by Interval")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-6-1.png) 
 
  2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
  
@@ -120,7 +138,7 @@ stepsPerDay <- tapply(data.without.na$steps, data.without.na$date, FUN=sum)
 qplot(stepsPerDay, binwidth=1000, xlab="Total number of steps per day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-9-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-10-1.png) 
 
 ```r
 mean(stepsPerDay)
@@ -159,4 +177,4 @@ ggplot(data = data.without.na, mapping = aes(x = interval, y = meanSteps)) +
     scale_y_continuous("Average Number of Steps") + ggtitle("Average Number of Steps Taken by Interval")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-11-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-12-1.png) 
